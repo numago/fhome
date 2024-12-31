@@ -1,0 +1,89 @@
+# Alacritty - TOML configuration file format.
+
+# DESCRIPTION 
+# An example configuration file for Alacritty preconfigured with default values.
+
+# SYNTAX
+# Alacritty's configuration file uses the TOML format. 
+# The format's specification can be found at https://toml.io/en/v1.0.0.
+
+# GENERAL
+[general]
+import = []
+live_config_reload = true
+
+[window]
+# Remove or comment out the unsupported 'wayland' key
+# wayland = { enable = true }
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+# [font]
+# normal = { family = "Fira Code", style = "Regular" }
+# size = 8
+# builtin_box_drawing = true
+
+[colors]
+primary = { background = "#1a1b26", foreground = "#a9b1d6" }
+
+[colors.normal]
+black = "#32344a"
+red = "#f7768e"
+green = "#9ece6a"
+yellow = "#e0af68"
+blue = "#7aa2f7"
+magenta = "#ad8ee6"
+cyan = "#449dab"
+white = "#787c99"
+
+[colors.bright]
+black = "#444b6a"
+red = "#ff7a93"
+green = "#b9f27c"
+yellow = "#ff9e64"
+blue = "#7da6ff"
+magenta = "#bb9af7"
+cyan = "#0db9d7"
+white = "#acb0d0"
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+unfocused_hollow = true
+thickness = 0.15
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>	"
+save_to_clipboard = false
+
+[mouse]
+hide_when_typing = false
+
+[bell]
+animation = "Linear"
+duration = 0
+
+[debug]
+log_level = "Warn"
+
+[colors.search]
+matches = { foreground = "#181818", background = "#ac4242" }
+focused_match = { foreground = "#181818", background = "#f4bf75" }
+
+[colors.hints]
+start = { foreground = "#181818", background = "#f4bf75" }
+end = { foreground = "#181818", background = "#ac4242" }
+
+[colors.dim]
+black = "#0f0f0f"
+red = "#712b2b"
+green = "#5f6f3a"
+yellow = "#a17e4d"
+blue = "#456877"
+magenta = "#704d68"
+cyan = "#4d7770"
+white = "#8e8e8e"
+
+[env]
+TERM = "xterm-256color"

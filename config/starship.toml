@@ -1,0 +1,159 @@
+# user icon
+# [  ](bg:#c8d3f5 fg:#090c0c)\
+
+format = """
+$username\
+[](fg:#c8d3f5)\
+[](fg:#1A1B26 bg:#769ff0)\
+$directory\
+[](fg:#769ff0 bg:#ff966c)\
+$git_branch\
+$git_status\
+$git_state\
+[ ](fg:#ff966c)\
+$fill\
+$docker_context\
+$nodejs\
+$bun\
+$rust\
+$golang\
+$python\
+$php\
+$java\
+$kotlin\
+$ruby\
+$nix_shell\
+$aws\
+$azure\
+$gcloud\
+\n$character"""
+
+[fill]
+symbol = ' '
+style = 'bold green'
+
+[username]
+show_always = true
+style_user = "bg:#c8d3f5 fg:#090c0c"
+style_root = "bg:#ff007c fg:#090c0c"
+format = '[ $user ]($style)'
+disabled = false
+
+[directory]
+style = "fg:#090c0c bg:#769ff0"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = ""
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Projects" = "p"
+
+[git_branch]
+symbol = ""
+style = "fg:#090c0c bg:#ff966c"
+truncation_length = 12
+format = '[ $symbol $branch ]($style)'
+
+# Based on powerlevel10k symbols
+# https://github.com/romkatv/powerlevel10k/tree/master/gitstatus
+[git_status]
+style = "fg:#090c0c bg:#ff966c"
+conflicted = '~${count} '
+ahead = '⇡${count} '
+behind = '⇣${count} '
+stashed = '*${count} '
+untracked = '?${count} '
+deleted = '-${count} '
+modified = '!${count} '                                                                      # unstaged
+staged = '+${count} '
+diverged = '⇕⇡${ahead_count}⇣${behind_count} '
+format = '[($count $conflicted$deleted$renamed$modified$staged$untracked$diverged)]($style)'
+
+[git_state]
+style = "fg:#090c0c bg:#ff966c"
+format = '[\[$state( $progress_current of $progress_total)\]]($style)'
+
+[docker_context]
+symbol = ""
+style = "fg:#2496ed"
+format = '[$symbol ($context) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "fg:#9ece6a"
+format = '[$symbol ($version) ]($style)'
+
+[bun]
+symbol = "🥟"
+style = "bold green"
+format = '[$symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "fg:#c53b53"
+format = '[$symbol ($version) ]($style)'
+
+[golang]
+symbol = "󰟓"
+style = "fg:#89ddff"
+format = '[$symbol ($version) ]($style)'
+
+[php]
+symbol = ""
+style = "fg:#c099ff"
+format = '[$symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "fg:#cfc9c2"
+format = '[${pyenv_prefix}(${symbol} $virtualenv )]($style)'
+
+[deno]
+style = "fg:#22da6e"
+format = '[deno $(version) ]($style)'
+
+[java]
+symbol = ""
+style = "fg:#5382a1"
+format = '[$symbol ($version) ]($style)'
+
+[kotlin]
+symbol = "󱈙"
+style = "fg:#9d7cbf"
+format = '[$symbol ($version) ]($style)'
+
+[ruby]
+symbol = ""
+style = "fg:#d91404"
+format = '[$symbol ($version) ]($style)'
+
+[aws]
+symbol = "󰸏"
+style = "fg:#ec7211"
+format = '[$symbol ($profile) ]($style)'
+
+[nix_shell]
+symbol = ""
+style = "fg:#c8d3f5"
+format = '[$symbol $state \($name\) ]($style)'
+
+[azure]
+symbol = ""
+style = "fg:#0078d4"
+format = '[$symbol ($account) ]($style)'
+
+[gcloud]
+symbol = "󱇶"
+style = "fg:#4285f4"
+format = '[$symbol ($account) ]($style)'
+
+[time]
+# clock icon: 
+disabled = false
+time_format = "%T"                                 # Hour:Minute:Second Format
+style = "bg:none"
+format = '[[ $time ](fg:#545c7e bg:none)]($style)'
